@@ -17,18 +17,18 @@ def setup_seed(seed):
 setup_seed(123)
 
 class Config(object):
-    dataset_path = '../data/California-Unlabeled/California-10bands.csv'
-    pretrain_path = '../checkpoints/pretrain/'
+    dataset_path = '/content/drive/My Drive/GEE_Exports/SITS_10B_6M_500.csv'
+    pretrain_path = 'SITS-BERT/checkpoints/pretrain/'
     valid_rate = 0.03
-    max_length = 64
-    num_features = 10
-    epochs = 100
-    batch_size = 512
+    max_length = 12
+    num_features = 11
+    epochs = 10
+    batch_size = 50
     hidden_size = 256
     layers = 3
     attn_heads = 8
     learning_rate = 1e-4
-    warmup_epochs = 10
+    warmup_epochs = 5
     decay_gamma = 0.99
     dropout = 0.1
     gradient_clipping = 5.0
@@ -155,7 +155,7 @@ if __name__ == "__main__":
                            gradient_clipping_value=config.gradient_clipping)
 
     print("Pre-training SITS-BERT...")
-    mini_loss = np.Inf
+    mini_loss = np.inf
     for epoch in range(config.epochs):
         train_loss, valida_loss = trainer.train(epoch)
         if mini_loss > valida_loss:

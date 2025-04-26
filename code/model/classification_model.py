@@ -21,7 +21,7 @@ class MulticlassClassification(nn.Module):
 
     def __init__(self, hidden, num_classes):
         super().__init__()
-        self.pooling = nn.MaxPool1d(64)
+        self.pooling = nn.MaxPool1d(12)
         self.linear = nn.Linear(hidden, num_classes)
 
     def forward(self, x, mask):

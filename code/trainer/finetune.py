@@ -23,7 +23,7 @@ def kappa(matrix):
 def average_accuracy(matrix):
     correct = np.diag(matrix)
     all = matrix.sum(axis=0)
-    accuracy = correct / all
+    accuracy = np.divide(correct, all, out=np.zeros_like(correct, dtype=float), where=all != 0)
     aa = np.average(accuracy)
     return aa
 

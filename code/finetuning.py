@@ -47,32 +47,32 @@ def Config():
         help="")
     parser.add_argument(
         "--max_length",
-        default=128,
+        default=12,
         type=int,
         help="The maximum length of input time series. Sequences longer "
         "than this will be truncated, sequences shorter will be padded.",
     )
     parser.add_argument(
         "--num_features",
-        default=10,
+        default=11,
         type=int,
         help="",
     )
     parser.add_argument(
         "--num_classes",
-        default=2,
+        default=13,
         type=int,
         help="",
     )
     parser.add_argument(
         "--epochs",
-        default=100,
+        default=10,
         type=int,
         help="",
     )
     parser.add_argument(
         "--batch_size",
-        default=64,
+        default=50,
         type=int,
         help="",
     )
@@ -96,7 +96,7 @@ def Config():
     )
     parser.add_argument(
         "--learning_rate",
-        default=2e-5,
+        default=2e-4,
         type=float,
         help="",
     )
@@ -111,9 +111,9 @@ def Config():
 if __name__ == "__main__":
     config = Config()
 
-    train_file = config.file_path + 'Train.csv'
-    valid_file = config.file_path + 'Validate.csv'
-    test_file = config.file_path + 'Test.csv'
+    train_file = '/content/drive/MyDrive/California-Labeled/California-Labeled/Train_cleaned.csv'
+    valid_file = '/content/drive/MyDrive/California-Labeled/California-Labeled/Validate_cleaned.csv'
+    test_file =  '/content/drive/MyDrive/California-Labeled/California-Labeled/Test_cleaned.csv'
 
     print("Loading Data sets...")
     train_dataset = FinetuneDataset(train_file, config.num_features, config.max_length)
