@@ -42,7 +42,7 @@ def Config():
     )
     parser.add_argument(
         "--valid_rate",
-        default=0.03,
+        default=0.2,
         type=float,
         help="")
     parser.add_argument(
@@ -66,7 +66,7 @@ def Config():
     )
     parser.add_argument(
         "--epochs",
-        default=10,
+        default=100,
         type=int,
         help="",
     )

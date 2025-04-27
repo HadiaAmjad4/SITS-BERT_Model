@@ -18,17 +18,17 @@ setup_seed(123)
 
 class Config(object):
     dataset_path = '/content/drive/My Drive/GEE_Exports/SITS_10B_6M_500.csv'
-    pretrain_path = 'SITS-BERT/checkpoints/pretrain/'
-    valid_rate = 0.03
+    pretrain_path = 'SITS-BERT_Model/checkpoints/pretrain/'
+    valid_rate = 0.2
     max_length = 12
     num_features = 11
-    epochs = 10
+    epochs = 50
     batch_size = 50
     hidden_size = 256
     layers = 3
     attn_heads = 8
     learning_rate = 1e-4
-    warmup_epochs = 5
+    warmup_epochs = 10
     decay_gamma = 0.99
     dropout = 0.1
     gradient_clipping = 5.0
